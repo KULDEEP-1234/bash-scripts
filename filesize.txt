@@ -1,0 +1,5 @@
+48K	/home/ec2-user
+48K	/home
+12K	/home/ec2-user/.diskutilization.sh.swp
+4.0K	/home/ec2-user/.ssh/authorized_keys
+4.0K	/home/ec2-user/.ssh
