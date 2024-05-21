@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Downlod Python"
+if [ -e /home/ec2-user/Python-3.8.18.tgz ];
+then
+echo "File is already downloaded"
+else
+wget https://www.python.org/ftp/python/3.8.18/Python-3.8.18.tgz
+tar -zxvf /home/ec2-user/Python-3.8.18.tgz
+echo "File has been extracted"
+fi

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#######################
+#bash script to install git in different linux OS
+#######################
+
+
+echo "This script is written to install git"
+if [ "$( hostnamectl | grep Ubuntu | awk -F " " '{print $3}')" == "Ubuntu" ];
+then
+        echo "This is a Ubuntu Box"
+        apt-get install git-all
+
+elif [ "$( hostnamectl | grep Red | awk -F " " '{print $3}')" == "Red" ];
+then
+        echo "This is a Red Hat Box"
+        yum install git -y
+
+else
+
+        echo "exiting"
+fi

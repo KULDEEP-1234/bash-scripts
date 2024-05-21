@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "This script deletes files older that 30 days"
+echo "Enter Folder Path"
+read path
+find $path -mtime +30 -delete
+if [ $? -eq 0 ];
+then
+echo "files are deleted successfully"
+else
+echo "deletion is having some issues"
+fi

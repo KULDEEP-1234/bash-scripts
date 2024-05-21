@@ -1,0 +1,27 @@
+#!/bin/bash
+echo "Please enter the sofware names that you want to install in command line"
+exit 1
+fi
+
+if [ $(id -u) -ne 0 ];
+then
+echo "Please run the script as root"
+exit 2
+fi
+
+for softwares in $@
+do
+if which $softwares &> /dev/null
+then
+echo "software is already installed"
+else
+echo "Installing softwares...."
+yum install $softwares -y &> /dev/null
+if [ $? -eq 0 ];
+then
+echo "Successfully installed"
+else
+echo "Unable to install"
+fi
+fi
+done

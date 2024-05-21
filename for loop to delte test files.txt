@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Define the directory to search in (current directory by default)
+search_dir="${1:-.}"
+
+# Define the pattern to match the folders (e.g., folders starting with "test")
+pattern="*$.^test.*$"
+
+# Loop through all the directories in the specified directory
+for dir in "$search_dir"/*/; do
+    # Extract the folder name from the path
+    folder_name=$(basename "$dir")
+
+    # Check if the folder name matches the pattern
+    if [[ "$folder_name" =~ $pattern ]]; then
+        echo "Deleting folder: $dir"
+        rm -rf "$dir"
+    fi
+done

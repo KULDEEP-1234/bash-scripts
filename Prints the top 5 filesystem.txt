@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "This script prints the top 10 highly utilized filesystems"
+echo "Enter the path"
+read path
+du -ah $path | sort -hr | head -n 5 > /home/ec2-user/filesize.txt
+echo "this is the list"
+cat /home/ec2-user/filesize.txt
